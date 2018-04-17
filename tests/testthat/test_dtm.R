@@ -46,16 +46,15 @@ test_that("class of dtm", {
   expect_is(atom_dtm(c('one', 'two', 'one two')), 'simple_triplet_matrix')
 })
 
-# test_that("parallel works well", {
-#   skip_on_cran()
-#   skip_on_travis()
-#   skip_on_appveyor()
-#
-#   expect_equal(
-#     atom_dtm(c('one', 'two', 'one two')),
-#     atom_dtm(c('one', 'two', 'one two'), parallel = TRUE)
-#   )
-# })
+test_that("parallel works well", {
+  skip_on_os(c('linux', 'mac', 'solaris'))
+  skip_on_cran()
+
+  expect_equal(
+    atom_dtm(c('one', 'two', 'one two')),
+    atom_dtm(c('one', 'two', 'one two'), parallel = TRUE)
+  )
+})
 
 test_that("characters works well", {
   expect_equal(

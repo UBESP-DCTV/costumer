@@ -1,3 +1,8 @@
+# costumer 0.0.8
+
+* Updated test for parallel computing on windows machines
+
+
 # costumer 0.0.7
 
 * Removed AppVeyor (unexpected error with testthat which not happen
