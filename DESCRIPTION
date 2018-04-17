@@ -1,9 +1,39 @@
 Package: costumer
 Version: 0.0.0.9000
-Title: What the Package Does (One Line, Title Case)
-Description: What the package does (one paragraph).
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-License: What license is it under?
+Title: COmprehensive Searches ThroUgh Machine learning for systEmatic Reviews
+Description: The aims of this package is to provide the data, the functions,
+  scripts for the analyses and the documentation (report) within the
+  relative templates for the paper *Building Comprehensive Searches
+  including PubMed and ClinicalTrials.gov Through a Machine Learning
+  Approach for Systematic Reviews*.
+Maintainer: Corrado Lanera <corrado.lanera@unipd.it>
+Authors@R: c(
+    person("Corrado", "Lanera", email = "corrado.lanera@unipd.it",
+      role = c("aut", "cre")
+    ),
+    person("Abhinav", "Sharma", email = "abhishar@iitk.ac.in",
+      role = "aut"
+    ),
+    person("Clara", "Minto", email = "clara.minto@unipd.it",
+      role = "aut"
+    ),
+    person("Ileana", "Baldi", email = "ileana.baldi@unipd.it",
+      role = "aut"
+    ),
+    person("Dario", "Gregori", email = "dario.gregori@unipd.it",
+      role = "aut"
+    )
+  )  
+License: GPL-3
+URL: https://github.com/UBESP-DCTV/costumer
+BugReports: https://github.com/UBESP-DCTV/costumer/issues
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
+RoxygenNote: 6.0.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown,
+    utils,
+    devtools
