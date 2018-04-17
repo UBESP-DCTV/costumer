@@ -1,10 +1,11 @@
 # Instructions
 
-* Bring `raw_pubmed/` folder and `raw_ctgov.zip` file from where they are
-    (possibly in the local folder `non_git_nor_build_derived_data` or at
-    a shared link reported in the main `README` of the present package)
-* Decompress here `raw_ctgov.zip` (decompressed file size is ~841 MB)
-* Run the scripts for which there are some interest
+* Bring `raw_pubmed/` folder, `raw_ctgov.zip` and `random4h28.xlsx`
+    files from where they are (possibly in the local folder
+    `non_git_nor_build_derived_data` or at a shared link reported in the
+    main `README` of the present package).
+* Decompress here `raw_ctgov.zip` (decompressed file size is ~841 MB).
+* Run the scripts for which there are some interest.
 
 > Note: any output from the script in this folder are in the `data/` folder
         or in the local folder `non_git_nor_build_derived_data` or at

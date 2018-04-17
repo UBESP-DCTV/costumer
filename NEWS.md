@@ -3,6 +3,8 @@
 * Added dependencies from `mlr` package needed for `unbalanced` ones
 * Added `inst/analyses/hutch_analyses_p1_v2.0.R` file which is the script 
     used to perform the final analyses.
+* Updated main `README` file.
+* Updated `DESCRIPTION`
 
 
 # costumer 0.0.5

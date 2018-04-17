@@ -11,16 +11,19 @@ Authors@R: c(
     person("Corrado", "Lanera", email = "corrado.lanera@unipd.it",
       role = c("aut", "cre")
     ),
-    person("Abhinav", "Sharma", email = "abhishar@iitk.ac.in",
-      role = "aut"
-    ),
     person("Clara", "Minto", email = "clara.minto@unipd.it",
       role = "aut"
     ),
-    person("Ileana", "Baldi", email = "ileana.baldi@unipd.it",
+    person("Abhinav", "Sharma", email = "abhishar@iitk.ac.in",
       role = "aut"
     ),
     person("Dario", "Gregori", email = "dario.gregori@unipd.it",
+      role = "aut"
+    ),
+    person("Paola", "Berchialla", email = "paola.berchialla@unito.it",
+      role = "aut"
+    ),
+    person("Ileana", "Baldi", email = "ileana.baldi@unipd.it",
       role = "aut"
     )
   )  
