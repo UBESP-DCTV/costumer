@@ -1,3 +1,9 @@
+# costumer 0.0.3
+
+* Updated `README.Rmd` removing install instructions from CRAN
+
+
+
 # costumer 0.0.2
 
 * Added `data-raw` folder for raw data.

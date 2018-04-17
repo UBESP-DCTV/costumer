@@ -10,12 +10,11 @@ The goal of costumer is to provide the data, the functions, scripts for the anal
 Installation
 ------------
 
-You can install the released version of costumer from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("costumer")
-```
-
+<!-- You can install the released version of costumer from -->
+<!-- [CRAN](https://CRAN.R-project.org) with: -->
+<!-- ``` r -->
+<!-- install.packages("costumer") -->
+<!-- ``` -->
 You can install the development version from [GitHub](https://github.com/) with the following procedure:
 
 ``` r
