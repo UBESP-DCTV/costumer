@@ -34,9 +34,9 @@ folders' organization
     -   the customized `caret` models (used to incorporate a correct management of cross-validation process with textual data, especially for iDF reweighting) --- `*_cvAble.rda`;
     -   the customized functions for the unbalance management --- `R[OU]S(3565|5050)_new.rda`;
     -   sample data used in the automated tests --- `liu_*.rda`.
--   `inst/` contains two folders:
-    -   `analyses/` which contains the script used to perform all the analyses reported in Lanera et al. (2018);
-    -   `doc/` which contains the data-dictionary for the original clinicaltrial.gov data
+-   `inst/` contains one folder `doc/` which contains:
+    -   `hutch_analyses_p1_v2.0.R`, the script used to perform all the analyses reported in Lanera et al. (2018);
+    -   `AACT201603_comprehensive_data_dictionary.xlsx`, the data-dictionary for the original clinicaltrial.gov data.
 
 > **Note**: the main data used are to huge to be included in a R package or in a github repository. [Here](https://1drv.ms/f/s!AtlSkmthbrG4i8lA1fk5LPhmsOt0pg) you can find a folder named `non_git_nor_build_derived_data/` (2.86 GB) which contains:
 >

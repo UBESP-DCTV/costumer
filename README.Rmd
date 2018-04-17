@@ -81,11 +81,11 @@ devtools::install_github("UBESP-DCTV/costumer")
     - the customized functions for the unbalance management ---
       `R[OU]S(3565|5050)_new.rda`;
     - sample data used in the automated tests --- `liu_*.rda`.
-* `inst/` contains two folders:
-    - `analyses/` which contains the script used to perform all the analyses 
-      reported in @lanera18;
-    - `doc/` which contains the data-dictionary for the original
-      clinicaltrial.gov data
+* `inst/` contains one folder `doc/` which contains:
+    - `hutch_analyses_p1_v2.0.R`, the script used to perform all the
+      analyses reported in @lanera18;
+    - `AACT201603_comprehensive_data_dictionary.xlsx`, the data-dictionary
+      for the original clinicaltrial.gov data.
 
 > **Note**: the main data used are to huge to be included in a R package or
 >  in a github repository.
