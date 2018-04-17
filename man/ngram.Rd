@@ -32,7 +32,7 @@ trigram(corpus, ..., parallel = FALSE, ncores = parallel::detectCores() - 1)
 }
 \arguments{
 \item{corpus}{a compatible object storing documents (actually, list (and
-\code{\link[hutch.code]{corpus_list}}) of (tokened) documents,
+\code{\link{corpus_list}}) of (tokened) documents,
 character vectors and \code{\link[tm]{VCorpus}})}
 
 \item{n_min}{(num) minimum number of words to include in the grams}

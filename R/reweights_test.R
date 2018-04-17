@@ -11,7 +11,7 @@
 #'                  wrt documents, i.e. row_sum equals 1 for every row.
 #' @param ...  Other parameters to called functions (e.g. \code{fun})
 #' @param fun The \code{function} used to compute the original weigths. By
-#'            default \code{\link[hutch.code]{idf}}. (Suggestion is to not
+#'            default \code{\link{idf}}. (Suggestion is to not
 #'            change this option!). It has to admit as first argument the
 #'            orignial \code{\link[tm]{DocumentTermMatrix}}.
 #' @param original_weights optional numerical vector of weights to be used

@@ -1,6 +1,6 @@
 #' Variable selector (best tfidf rank)
 #'
-#' @param original_train original (\code{\link[tm]{simple_triplet_matrix}})
+#' @param original_train original (\code{\link[slam]{simple_triplet_matrix}})
 #'        with overall variables
 #' @param max_retainied the maximum number of variable to retain
 #'        (default is

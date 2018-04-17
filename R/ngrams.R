@@ -4,7 +4,7 @@
 #' corpora.
 #'
 #' @param corpus a compatible object storing documents (actually, list (and
-#'               \code{\link[hutch.code]{corpus_list}}) of (tokened) documents,
+#'               \code{\link{corpus_list}}) of (tokened) documents,
 #'               character vectors and \code{\link[tm]{VCorpus}})
 #' @param n_min (num) minimum number of words to include in the grams
 #' @param n_max (num) maximum number of words to include into the grams

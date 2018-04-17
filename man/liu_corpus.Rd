@@ -13,13 +13,13 @@
          document relative classification
 }}
 \source{
-\link{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
+\url{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
 }
 \usage{
 liu_corpus
 }
 \description{
 This is the \code{\link[tm]{VCorpus}} representation of
-\code{\link[hutch.code]{liu_4h28}}
+\code{\link{liu_4h28}}
 }
 \keyword{datasets}

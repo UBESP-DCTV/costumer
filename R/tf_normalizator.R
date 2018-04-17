@@ -6,13 +6,13 @@
 #' document.
 #' a
 #'
-#' @param dtm A \code{\link[tm]{DocumentTermFrequencies}} filled with the simple
+#' @param dtm A \code{\link[tm]{DocumentTermMatrix}} filled with the simple
 #'            term-frequencies weights
 #' @param force (lgl) if \code{TRUE} (default is \code{FALSE}) the function
 #'              works also for \code{\link[slam]{simple_triplet_matrix}}
 #'              which are not \code{\link[tm]{DocumentTermMatrix}}
 #'
-#' @return A \code{\link[tm]{DocumentTermFrequencies}} for wich the sum of the
+#' @return A \code{\link[tm]{DocumentTermMatrix}} for wich the sum of the
 #'         frequencies of each document is 1 (or 0 if it is an empty one)
 #' @export
 #'
@@ -54,7 +54,7 @@ tf_normalizator <- function(dtm, force = FALSE) {
 #' The aims of this function is to compute the Inverse document-frequencies
 #' possibly using different functions. The standard one is the \code{log2}
 #'
-#' @param dtm A \code{\link[tm]{DocumentTermFrequencies}} filled with the simple
+#' @param dtm A \code{\link[tm]{DocumentTermMatrix}} filled with the simple
 #'            term-frequencies weights
 #'
 #' @param fun The weighting function for the ratio of document-frequencies

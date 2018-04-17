@@ -18,7 +18,7 @@
      pubmed.
 }}
 \source{
-\link{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
+\url{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
 }
 \usage{
 liu_4h28

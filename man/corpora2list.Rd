@@ -10,7 +10,7 @@ corpora2list(corpora)
 list2corpora(corpora_list)
 }
 \arguments{
-\item{corpora}{A \code{\link[tm]{Vcorpus}}}
+\item{corpora}{A \code{\link[tm]{VCorpus}}}
 
 \item{corpora_list}{A \code{corpora_list} object}
 }
@@ -30,7 +30,7 @@ information to came back to the original structure (\code{list2corpora}).
 }
 \details{
 The aims is to provide a suitable input to function optimizated to
-used native list objects such as \code{\link{list_to_dtm}} to manage the
+used list objects to manage the
 content of the documents, and next to come back to the original structure
 of \code{\link[tm]{VCorpus}}.
 }

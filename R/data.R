@@ -19,14 +19,14 @@
 #'      pubmed.
 #' }
 #'
-#' @source \link{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
+#' @source \url{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
 "liu_4h28"
 
 
 #' Liu's Corpus
 #'
 #' This is the \code{\link[tm]{VCorpus}} representation of
-#'\code{\link[hutch.code]{liu_4h28}}
+#'\code{\link{liu_4h28}}
 #'
 #'
 #' @format A \code{[tm]{VCorpus}}
@@ -38,14 +38,14 @@
 #'          document relative classification
 #' }
 #'
-#' @source \link{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
+#' @source \url{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
 "liu_corpus"
 
 
 #' Liu's Document-Term Matrix
 #'
 #' This is the Document-Term Matrix (with simple term frequency weights)
-#' representation of \code{\link[hutch.code]{liu_4h28}}
+#' representation of \code{\link{liu_4h28}}
 #'
 #'
 #' @format Both \code{[tm]{DocumentTermMatrix}} and
@@ -69,6 +69,6 @@
 #'      second one)
 #' }
 #'
-#' @source \link{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
+#' @source \url{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
 "liu_dtm"
 

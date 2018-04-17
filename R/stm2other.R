@@ -5,7 +5,7 @@
 #'  is required to reserve for the proces. Default is to use standard R option
 #'  and so provide "memory.limit()"
 #'
-#' @return \code{\link[hutch.code]{stm2dns}} returns a full dense \code{matrix}
+#' @return \code{\link{stm2dns}} returns a full dense \code{matrix}
 #' @export
 #'
 #' @examples
@@ -41,7 +41,7 @@ stm2dns <- function(dtm, memory = NULL){
 
 
 #' @rdname stm2dns
-#' @return \code{\link[hutch.code]{as.data.frame.simple_triplet_matrix}}
+#' @return \code{\link{as.data.frame.simple_triplet_matrix}}
 #'          returns a \code{data.frame}
 #' @export
 as.data.frame.simple_triplet_matrix <- function(dtm, memory = NULL){

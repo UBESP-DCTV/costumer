@@ -7,7 +7,7 @@
 tf_normalizator(dtm, force = FALSE)
 }
 \arguments{
-\item{dtm}{A \code{\link[tm]{DocumentTermFrequencies}} filled with the simple
+\item{dtm}{A \code{\link[tm]{DocumentTermMatrix}} filled with the simple
 term-frequencies weights}
 
 \item{force}{(lgl) if \code{TRUE} (default is \code{FALSE}) the function
@@ -15,7 +15,7 @@ works also for \code{\link[slam]{simple_triplet_matrix}}
 which are not \code{\link[tm]{DocumentTermMatrix}}}
 }
 \value{
-A \code{\link[tm]{DocumentTermFrequencies}} for wich the sum of the
+A \code{\link[tm]{DocumentTermMatrix}} for wich the sum of the
         frequencies of each document is 1 (or 0 if it is an empty one)
 }
 \description{

@@ -99,12 +99,12 @@ hutch_map <- function(corpus, FUN, ...) {
 #' information to came back to the original structure (\code{list2corpora}).
 #'
 #' The aims is to provide a suitable input to function optimizated to
-#' used native list objects such as \code{\link{list_to_dtm}} to manage the
+#' used list objects to manage the
 #' content of the documents, and next to come back to the original structure
 #' of \code{\link[tm]{VCorpus}}.
 #'
 #' @describeIn corpora2list Create a \code{corpora_list} object from a corpora.
-#' @param corpora A \code{\link[tm]{Vcorpus}}
+#' @param corpora A \code{\link[tm]{VCorpus}}
 #'
 #' @return \code{corpora2list} returns a List of documents with metadata stored
 #'         as attributes, i.e. document-specific metadata are stored in a list

@@ -8,7 +8,7 @@ variable_select(original_train, max_retained = min(1000L,
   as.integer(ncol(original) * 10/100)))
 }
 \arguments{
-\item{original_train}{original (\code{\link[tm]{simple_triplet_matrix}})
+\item{original_train}{original (\code{\link[slam]{simple_triplet_matrix}})
 with overall variables}
 
 \item{max_retainied}{the maximum number of variable to retain

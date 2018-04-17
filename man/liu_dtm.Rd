@@ -25,13 +25,13 @@
      second one)
 }}
 \source{
-\link{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
+\url{https://www.ncbi.nlm.nih.gov/pubmed/24639059}
 }
 \usage{
 liu_dtm
 }
 \description{
 This is the Document-Term Matrix (with simple term frequency weights)
-representation of \code{\link[hutch.code]{liu_4h28}}
+representation of \code{\link{liu_4h28}}
 }
 \keyword{datasets}

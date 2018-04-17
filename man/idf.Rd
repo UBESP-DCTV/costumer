@@ -7,7 +7,7 @@
 idf(dtm, fun = log2, adjust = TRUE, force = FALSE)
 }
 \arguments{
-\item{dtm}{A \code{\link[tm]{DocumentTermFrequencies}} filled with the simple
+\item{dtm}{A \code{\link[tm]{DocumentTermMatrix}} filled with the simple
 term-frequencies weights}
 
 \item{fun}{The weighting function for the ratio of document-frequencies}

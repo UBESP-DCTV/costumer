@@ -17,9 +17,9 @@ is required to reserve for the proces. Default is to use standard R option
 and so provide "memory.limit()"}
 }
 \value{
-\code{\link[hutch.code]{stm2dns}} returns a full dense \code{matrix}
+\code{\link{stm2dns}} returns a full dense \code{matrix}
 
-\code{\link[hutch.code]{as.data.frame.simple_triplet_matrix}}
+\code{\link{as.data.frame.simple_triplet_matrix}}
          returns a \code{data.frame}
 }
 \description{

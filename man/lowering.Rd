@@ -20,7 +20,7 @@ lowering(corpus)
 }
 \arguments{
 \item{corpus}{a compatible object storing documents (actually, list (and
-\code{\link[hutch.code]{corpus_list}}) of (tokened) documents, character
+\code{\link{corpus_list}}) of (tokened) documents, character
 vectors and \code{\link[tm]{VCorpus}})}
 }
 \value{
