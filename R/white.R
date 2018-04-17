@@ -8,7 +8,7 @@
 
 #'
 #' @param corpus a compatible object storing documents (actually, list (and
-#'               \code{\link{corpus_list}}) of (tokened) documents,
+#'               corpus-list of (tokened) documents,
 #'               character vectors and \code{\link[tm]{VCorpus}})
 #' @param ... Other paramenter
 #' @param pattern (chr) A regular expression to be use for detection of

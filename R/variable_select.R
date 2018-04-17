@@ -2,7 +2,7 @@
 #'
 #' @param original_train original (\code{\link[slam]{simple_triplet_matrix}})
 #'        with overall variables
-#' @param max_retainied the maximum number of variable to retain
+#' @param max_retained the maximum number of variable to retain
 #'        (default is
 #'        \code{min(1000L, as.integer(ncol(original) * 10/100))})
 #'
@@ -11,16 +11,14 @@
 #' @export
 #'
 #' @examples
-#' library(hutch.code)
 #' data(liu_dtm)
-#'
 #' variable_select(liu_dtm)
 variable_select <- function(original_train,
-  max_retained = min(1000L, as.integer(ncol(original) * 10/100))
+  max_retained = min(1000L, as.integer(ncol(original_train) * 10/100))
 ) {
 
   idx <- original_train %>%
-    hutch.code::tfidf4dtm() %>%
+    tfidf4dtm() %>%
     slam::col_sums() %>%
     order(decreasing = TRUE)
 

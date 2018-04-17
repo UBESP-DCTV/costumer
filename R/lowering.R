@@ -1,7 +1,7 @@
 #' Lowering
 #'
 #' @param corpus a compatible object storing documents (actually, list (and
-#' \code{\link{corpus_list}}) of (tokened) documents, character
+#' corpus-list of (tokened) documents, character
 #' vectors and \code{\link[tm]{VCorpus}})
 #'
 #' @return an object of the same class of input with documents witten with only

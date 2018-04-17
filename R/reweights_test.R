@@ -74,7 +74,7 @@ reweights_test <- function(target, original, normalize = TRUE, ...,
     if (!identical(fun, idf)) {
       warning('"fun" not standard, attribute "weighting" for target could be wrongly assigned.')
     }
-    if ('force' %in% formalArgs(args(fun))) {
+    if ('force' %in% methods::formalArgs(args(fun))) {
       wgts <- fun(original, ..., force = force)
     } else {
       wgts <- fun(original, ...)

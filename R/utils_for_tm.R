@@ -15,11 +15,10 @@
 #' @export
 #'
 #' @examples
-#' library(hutch.code)
 #' data(liu_4h28)
 #'
 #' corpus <- create_train(data_df = liu_4h28, name_df = 'Liu')
-#' corpus <- assign_meta(corpus, 'author', liu_4h28$authors)
+#' corpus <- v_assign_meta(corpus, 'author', liu_4h28$authors)
 v_assign_meta <- function(corpus, meta_name, meta_content) {
   ## Check the correctness of the input ----------------------------------------
   #
@@ -60,7 +59,7 @@ v_assign_meta <- function(corpus, meta_name, meta_content) {
 #===============================================================================
 #' Transform on HUTCH corpora
 #'
-#' Interface to apply (using \code{\pkg{purrr}}) transformation functions (also
+#' Interface to apply (using \pkg{purrr}) transformation functions (also
 #' denoted as mappings) to corpora. This is a slightly modification of the
 #' \code{link[tm]{tm_map}} function.
 #'
@@ -116,7 +115,7 @@ hutch_map <- function(corpus, FUN, ...) {
 #' @examples
 #'
 #' data(liu_4h28)
-#' corpora  <- data2corpora(liu_4h28)
+#' corpora  <- data2corpus(liu_4h28)
 #' doc_list <- corpora2list(corpora)
 corpora2list <- function(corpora) {
 

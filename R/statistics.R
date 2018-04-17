@@ -16,13 +16,15 @@
 #' @export
 #'
 #' @examples
-#' library(hutch.code)
 #' library(tm)
 #' library(plyr)
+#'
 #' truth <- factor(meta(liu_corpus)$real_label)
-#' sam <- meta(liu_corpus)$real_label
-#' pred <- factor(sample(sam))
-#' statistics(pred, truth, positive = "1",  dnn = c("Prediction", "Truth"), prevalence = NULL, mode = "everything")
+#' sam   <- meta(liu_corpus)$real_label
+#' pred  <- factor(sample(sam))
+#' statistics(pred, truth, positive = "1",  dnn = c("Prediction", "Truth"),
+#'   prevalence = NULL, mode = "everything"
+#' )
 statistics <- function(pred, truth, positive, dnn, prevalence, mode){
 
   if(!is.factor(pred) || !is.factor(truth)){

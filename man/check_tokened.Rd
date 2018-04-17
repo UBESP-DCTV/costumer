@@ -33,6 +33,6 @@ or are tokened
 }
 \examples{
 data(liu_corpus)
-check_token(liu_corpus)
+check_tokened(liu_corpus)
 
 }

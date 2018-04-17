@@ -43,20 +43,25 @@ This function applies balancing techniques: Random Undersampling and Random Over
  using the functions \code{\link[unbalanced]{ubUnder}} and \code{\link[unbalanced]{ubOver}}.
 }
 \examples{
-library(hutch.code)
 library(tm)
 library(unbalanced)
-Y <- factor(meta(liu_corpus)$real_label)
+
+y <- factor(meta(liu_corpus)$real_label)
 x <- liu_dtm
-exp <- hutch_sampling(stm, class, type = "RUS_Pos", perc = 50, k_pos = 0, w = NULL, verbose = FALSE)
+
+exp <- hutch_sampling(x, y, type = "RUS_Pos", perc = 50, k_pos = 0,
+  w = NULL, verbose = FALSE
+)
+
 exp$X
 exp$Y
 exp$id.rm
 
-type = "ROS"
-Y <- factor(meta(liu_corpus)$real_label)
-x <- liu_dtm
-test <- hutch_sampling(stm, class, type = "ROS", perc = 50, k_pos = 2, w = NULL, verbose = FALSE)
+
+test <- hutch_sampling(x, y, type = "ROS", perc = 50, k_pos = 2,
+  w = NULL, verbose = FALSE
+)
+
 test$X
 test$Y
 }

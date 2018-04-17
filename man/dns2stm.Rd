@@ -17,6 +17,11 @@ colnames as tokens}
 \item{memory}{(num) the maximum ammount of memory (RAM + virtual) the sistem
 is required to reserve for the proces. Default is to use standard R option
 and so provide "memory.limit()"}
+
+\item{df}{a data frame to be converted in STM}
+
+\item{force}{(lgl) flag (default = FALSE) to force the use also for
+non-weihted data frames}
 }
 \value{
 an object of classes
@@ -27,7 +32,8 @@ an object of classes
 Dense matrix to Simple Triplet-Matrix
 }
 \examples{
+library(slam)
 data("liu_dtm")
 liu_full_matrix <- stm2dns(liu_dtm)
-identical(liu_dtm, as.simple_triplet_matrix(liu_full_matrix))
+identical(liu_dtm, slam::as.simple_triplet_matrix(liu_full_matrix))
 }

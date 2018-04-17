@@ -5,13 +5,13 @@
 \title{Variable selector (best tfidf rank)}
 \usage{
 variable_select(original_train, max_retained = min(1000L,
-  as.integer(ncol(original) * 10/100)))
+  as.integer(ncol(original_train) * 10/100)))
 }
 \arguments{
 \item{original_train}{original (\code{\link[slam]{simple_triplet_matrix}})
 with overall variables}
 
-\item{max_retainied}{the maximum number of variable to retain
+\item{max_retained}{the maximum number of variable to retain
 (default is
 \code{min(1000L, as.integer(ncol(original) * 10/100))})}
 }
@@ -23,8 +23,6 @@ an object of the same class of \code{original} with only the
 Variable selector (best tfidf rank)
 }
 \examples{
-library(hutch.code)
 data(liu_dtm)
-
 variable_select(liu_dtm)
 }

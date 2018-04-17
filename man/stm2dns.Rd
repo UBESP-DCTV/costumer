@@ -5,16 +5,18 @@
 \alias{as.data.frame.simple_triplet_matrix}
 \title{Simple Triplet-Matrix to Dense matrix}
 \usage{
-stm2dns(dtm, memory = NULL)
+stm2dns(x, memory = NULL)
 
-\method{as.data.frame}{simple_triplet_matrix}(dtm, memory = NULL)
+\method{as.data.frame}{simple_triplet_matrix}(x, ..., memory = NULL)
 }
 \arguments{
-\item{dtm}{an object of simple_triplet_matrix class}
+\item{x}{an object of simple_triplet_matrix class}
 
 \item{memory}{(num) the maximum ammount of memory (RAM + virtual) the sistem
 is required to reserve for the proces. Default is to use standard R option
 and so provide "memory.limit()"}
+
+\item{...}{further arguments passed to the function}
 }
 \value{
 \code{\link{stm2dns}} returns a full dense \code{matrix}

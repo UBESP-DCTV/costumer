@@ -45,7 +45,7 @@ loggeRs <- function(
 #
     loggers <- lapply(1:n.log,
                       function(i) {
-                          create.logger(
+                        log4r::create.logger(
                               logfile = file.path(log.files)[i],
                               level = log.levels[i]
                           )

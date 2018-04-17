@@ -12,9 +12,10 @@
 #' @export
 #'
 #' @examples
+#' library(slam)
 #' data("liu_dtm")
 #' liu_full_matrix <- stm2dns(liu_dtm)
-#' identical(liu_dtm, as.simple_triplet_matrix(liu_full_matrix))
+#' identical(liu_dtm, slam::as.simple_triplet_matrix(liu_full_matrix))
 dns2stm <- function(dns, memory = NULL){
 
   if (!inherits(dns, 'weighted')) {
@@ -23,10 +24,10 @@ dns2stm <- function(dns, memory = NULL){
 
 
   if (!is.null(memory)) {
-    if (memory.limit() < memory) {
+    if (utils::memory.limit() < memory) {
       message('You are going to increase the maximum ammount of RAM that R can use.')
     }
-    memory.limit(memory) #200000
+    utils::memory.limit(memory) #200000
   }
 
   stm <- slam:::as.simple_triplet_matrix.matrix(dns)
@@ -45,6 +46,13 @@ dns2stm <- function(dns, memory = NULL){
 
 
 #' @rdname dns2stm
+#'
+#' @param df a data frame to be converted in STM
+#'
+#' @param force (lgl) flag (default = FALSE) to force the use also for
+#'              non-weihted data frames
+#'
+#'
 #' @export
 as.simple_triplet_matrix.data.frame <- function(df, memory = NULL,
   force = FALSE
@@ -57,10 +65,10 @@ as.simple_triplet_matrix.data.frame <- function(df, memory = NULL,
   }
 
   if (!is.null(memory)) {
-    if (memory.limit() < memory) {
+    if (utils::memory.limit() < memory) {
       message('You are going to increase the maximum ammount of RAM that R can use.')
     }
-    memory.limit(memory) #200000
+    utils::memory.limit(memory) #200000
   }
 
   stm <- slam:::as.simple_triplet_matrix.matrix(as.matrix.data.frame(df))

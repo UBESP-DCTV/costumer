@@ -24,9 +24,8 @@ To assign a single metadata to a single document or to the whole corpuse
 use the standard \code{\link[tm]{meta}}.
 }
 \examples{
-library(hutch.code)
 data(liu_4h28)
 
 corpus <- create_train(data_df = liu_4h28, name_df = 'Liu')
-corpus <- assign_meta(corpus, 'author', liu_4h28$authors)
+corpus <- v_assign_meta(corpus, 'author', liu_4h28$authors)
 }

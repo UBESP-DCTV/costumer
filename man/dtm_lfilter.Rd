@@ -41,5 +41,5 @@ to_adjust <- DocumentTermMatrix(crude)
 dtm_lfilter(reference, to_adjust)
 }
 \seealso{
-\link{tm}, \link{slam}
+\pkg{tm}, \pkg{slam}
 }

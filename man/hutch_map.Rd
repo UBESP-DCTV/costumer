@@ -19,7 +19,7 @@ of the same length as the input vector).}
 A corpus with FUN applied to each document in x.
 }
 \description{
-Interface to apply (using \code{\pkg{purrr}}) transformation functions (also
+Interface to apply (using \pkg{purrr}) transformation functions (also
 denoted as mappings) to corpora. This is a slightly modification of the
 \code{link[tm]{tm_map}} function.
 }
