@@ -2,3 +2,8 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
+^\.travis\.yml$
+^codecov\.yml$
+^appveyor\.yml$
+^data-raw$
+^analyses$
