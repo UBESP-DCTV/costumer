@@ -1,6 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis build status](https://travis-ci.org/UBESP-DCTV/costumer.svg?branch=master)](https://travis-ci.org/UBESP-DCTV/costumer) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/UBESP-DCTV/costumer?branch=master&svg=true)](https://ci.appveyor.com/project/UBESP-DCTV/costumer) [![Coverage status](https://codecov.io/gh/UBESP-DCTV/costumer/branch/master/graph/badge.svg)](https://codecov.io/github/UBESP-DCTV/costumer?branch=master)
+[![Travis build status](https://travis-ci.org/UBESP-DCTV/costumer.svg?branch=master)](https://travis-ci.org/UBESP-DCTV/costumer) <!-- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/UBESP-DCTV/costumer?branch=master&svg=true)](https://ci.appveyor.com/project/UBESP-DCTV/costumer) --> [![Coverage status](https://codecov.io/gh/UBESP-DCTV/costumer/branch/master/graph/badge.svg)](https://codecov.io/github/UBESP-DCTV/costumer?branch=master)
 
 costumer
 ========
@@ -23,7 +23,40 @@ You can install the development version from [GitHub](https://github.com/) with 
 devtools::install_github("UBESP-DCTV/costumer")
 ```
 
+folders' organization
+---------------------
+
+-   `R/` contains all the functions provided to implement the analyses
+-   `tests/` contains all the automated test to run for CI
+-   `man/` contains the documents for each function or data provided (accessible in R by `?<name_of_the_object>`)
+-   `data-raw/` contains all the script used to import and manage the data used in the analyses and in the (automated) tests of the package
+-   `data/` contains the data provided by the package. In particoular, it contains:
+    -   the customized `caret` models (used to incorporate a correct management of cross-validation process with textual data, especially for iDF reweighting) --- `*_cvAble.rda`;
+    -   the customized functions for the unbalance management --- `R[OU]S(3565|5050)_new.rda`;
+    -   sample data used in the automated tests --- `liu_*.rda`.
+-   `inst/` contains two folders:
+    -   `analyses/` which contains the script used to perform all the analyses reported in Lanera et al. (2018);
+    -   `doc/` which contains the data-dictionary for the original clinicaltrial.gov data
+
+> **Note**: the main data used are to huge to be included in a R package or in a github repository. [Here](https://1drv.ms/f/s!AtlSkmthbrG4i8lA1fk5LPhmsOt0pg) you can find a folder named `non_git_nor_build_derived_data/` (2.86 GB) which contains:
+>
+> -   `171106-all_svm_3565/` folder with all the outputs of the last analyses:
+>     -   `CV-Plots/` folder which contains all the cross-validation plots representing the decision levels for the tuning parameter used in each model;
+>     -   `models/` folder which contains all the trained models;
+>     -   `hutch3.rda` data which contains the `hutch3` data frame containing all the data-step of the analyses, i.e. starting data, preprocessed data, dmt, testing, data, model used, plots provided, ... everything!
+>     -   `*.txt` log files.
+> -   `raw_pubmed/` folder with the data used to train the models, which are needed to run the script `data-raw/import_pubmed.R`. Hence, if you would like to run that script by yourself you need to put this folder as it is into the `data-raw/` one.
+> -   `raw_ctgov.zip` zip file with the data used to test the models, i.e., the clinicaltrial.gov snapshot used and which is (when unzipped) needed to run the script `data-raw/import_ctgov.R`. Hence, if you would like to run that script by yourself you need to unzip this file and put the output folder as it is (~841 MB) into the `data-raw/` one.
+> -   `random4h28.xlsx` file with the sample data used to (automated) test functions provided with the package, which is needed to run the script `data-raw/import_liu.R`. Hence, if you would like to run that script by yourself you need to put this file as it is into the `data-raw/` folder.
+> -   `summaries_*.rda` the outputs ready-to-use of the functions `import_*.R` which are needed to run the script of the analyses. Hence, if you would like to run that script by yourself you need to put this files as they are into the `data/` folder.
+> -   `test_*.rda` data which are the outputs of the function `data-raw/ct_corpus_and_dtm.R` which are also needed (and here are ready-to-use) to run the script of the analyses. Hence, if you would like to run that script by yourself you need to put this files as they are into the `data/` folder.
+
 Bug reports
 -----------
 
 If you encounter a bug, please file a [reprex](https://github.com/tidyverse/reprex) (minimal reproducible example) to <https//github.com/UBESP-DCTV-imthcm/issues>
+
+Reference
+---------
+
+Lanera, Corrado, Clara Minto, Abhinav Sharma, Dario Gregori, Paola Berchialla, and Ileana Baldi. 2018. “Building Comprehensive Searches Including PubMed and ClinicalTrials.gov Through a Machine Learning Approach for Systematic Reviews.” *Submitted*. Under revision.

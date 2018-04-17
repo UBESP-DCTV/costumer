@@ -1,5 +1,5 @@
 Package: costumer
-Version: 0.0.5
+Version: 0.0.7
 Title: COmprehensive Searches ThroUgh Machine learning for systEmatic Reviews
 Description: The aims of this package is to provide the data, the functions,
   scripts for the analyses and the documentation (report) within the
@@ -11,16 +11,19 @@ Authors@R: c(
     person("Corrado", "Lanera", email = "corrado.lanera@unipd.it",
       role = c("aut", "cre")
     ),
-    person("Abhinav", "Sharma", email = "abhishar@iitk.ac.in",
-      role = "aut"
-    ),
     person("Clara", "Minto", email = "clara.minto@unipd.it",
       role = "aut"
     ),
-    person("Ileana", "Baldi", email = "ileana.baldi@unipd.it",
+    person("Abhinav", "Sharma", email = "abhishar@iitk.ac.in",
       role = "aut"
     ),
     person("Dario", "Gregori", email = "dario.gregori@unipd.it",
+      role = "aut"
+    ),
+    person("Paola", "Berchialla", email = "paola.berchialla@unito.it",
+      role = "aut"
+    ),
+    person("Ileana", "Baldi", email = "ileana.baldi@unipd.it",
       role = "aut"
     )
   )  
@@ -38,7 +41,10 @@ Suggests:
     rmarkdown,
     devtools,
     covr,
-    plyr
+    plyr,
+    here,
+    plotROC,
+    tidyverse
 Imports: dplyr,
     tm,
     purrr,
@@ -59,4 +65,5 @@ Imports: dplyr,
     stats,
     utils,
     log4r,
-    e1071
+    e1071,
+    mlr

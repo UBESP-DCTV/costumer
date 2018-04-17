@@ -1,3 +1,22 @@
+# costumer 0.0.7
+
+* Removed AppVeyor (unexpected error with testthat which not happen
+  locally).
+* Removed OSX on Travis (unexpected error with testthat which not happen
+  locally).
+* Removed old version of R on Travis (unexpected error with testthat which
+  not happenlocally).
+
+
+# costumer 0.0.6
+
+* Added dependencies from `mlr` package needed for `unbalanced` ones
+* Added `inst/analyses/hutch_analyses_p1_v2.0.R` file which is the script 
+    used to perform the final analyses.
+* Updated main `README` file.
+* Updated `DESCRIPTION`
+
+
 # costumer 0.0.5
 
 * Added `data-raw/raw_pubmed/` folder with the training data.

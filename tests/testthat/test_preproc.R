@@ -1,7 +1,10 @@
 context('Test preprocessing rutines')
 
 data("liu_corpus")
-sample_list_corpus <- list(c('a #', ' b7.', 'b 7. ', 'A.B.  C.'), c('Hello world.'))
+sample_list_corpus <- list(
+  c('a #', ' b7.', 'b 7. ', 'A.B.  C.'),
+  c('Hello world.')
+)
 sample_stem_corpus <- list(
   c('this is', 'is a', 'a beautiful', 'beautiful day'),
   c('hello beautiful', 'beautiful word')
@@ -9,7 +12,7 @@ sample_stem_corpus <- list(
 
 
 
-## nonword =====================================================================
+## nonword =================================================================
 #
 test_that("nonword class is right", {
   expect_is(nonword(liu_corpus), 'VCorpus')
@@ -35,7 +38,7 @@ test_that("nonword removing numbers", {
 })
 
 
-## white =======================================================================
+## white ===================================================================
 #
 test_that("white class is right", {
   expect_is(white(liu_corpus), 'VCorpus')
@@ -62,7 +65,7 @@ test_that("white manage pattern", {
   )
 })
 
-## lowering ====================================================================
+## lowering ================================================================
 #
 test_that("lowering class is right", {
   expect_is(lowering(liu_corpus), 'VCorpus')
@@ -83,7 +86,7 @@ test_that("lowering lowers", {
 })
 
 
-## stem ========================================================================
+## stem ====================================================================
 #
 
 test_that("stem class is right", {
@@ -94,14 +97,17 @@ test_that("stem class is right", {
 })
 
 test_that("stem named stemmed result", {
-  expect_equal(stem(sample_stem_corpus)[[1]][3], c(`a beautiful` = 'a beauti'))
+  expect_equal(
+    stem(sample_stem_corpus)[[1]][3],
+    c(`a beautiful` = 'a beauti')
+  )
   expect_equal(length(stem(sample_stem_corpus)), 2)
   expect_equal(length(stem(sample_stem_corpus)[[1]]), 4)
   expect_equal(length(stem(sample_stem_corpus)[[2]]), 2)
 })
 
 
-## ngram =======================================================================
+## ngram ===================================================================
 #
 
 test_that("grams class is right", {
@@ -156,10 +162,16 @@ test_that("grams class is right", {
 
 
 test_that("grams results are right", {
-  expect_equal(ngram(sample_list_corpus)[[2]], c('Hello world', 'Hello', 'world'))
+  expect_equal(
+    ngram(sample_list_corpus)[[2]],
+    c('Hello world', 'Hello', 'world')
+  )
   expect_equal(bigram(sample_list_corpus)[[2]], 'Hello world')
   expect_equal(trigram(sample_list_corpus)[[2]], character(0))
-  expect_equal(ngram(liu_corpus)$content[[1]]$content[[1]], 'Oral anti-angiogenesis')
+  expect_equal(
+    ngram(liu_corpus)$content[[1]]$content[[1]],
+    'Oral anti-angiogenesis'
+  )
 })
 
 # test_that("parallel ngram", {
