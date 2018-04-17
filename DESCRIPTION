@@ -38,3 +38,17 @@ Suggests:
     utils,
     devtools,
     covr
+Imports: dplyr,
+    tm,
+    purrr,
+    NLP,
+    stringi,
+    slam,
+    parallel,
+    stringr,
+    SnowballC,
+    progress,
+    pROC,
+    unbalanced,
+    RWeka,
+    magrittr

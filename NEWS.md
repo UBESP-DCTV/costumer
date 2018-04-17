@@ -1,3 +1,10 @@
+# costumer 0.0.4
+
+* Added imports
+* Added functions
+* Added tests (all passed)
+
+
 # costumer 0.0.3
 
 * Updated `README.Rmd` removing install instructions from CRAN
