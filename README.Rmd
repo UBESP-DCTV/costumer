@@ -35,7 +35,7 @@ knitr::opts_chunk$set(
 ```
 
 [![Travis build status](https://travis-ci.org/UBESP-DCTV/costumer.svg?branch=master)](https://travis-ci.org/UBESP-DCTV/costumer)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/UBESP-DCTV/costumer?branch=master&svg=true)](https://ci.appveyor.com/project/UBESP-DCTV/costumer)
+<!-- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/UBESP-DCTV/costumer?branch=master&svg=true)](https://ci.appveyor.com/project/UBESP-DCTV/costumer) -->
 [![Coverage status](https://codecov.io/gh/UBESP-DCTV/costumer/branch/master/graph/badge.svg)](https://codecov.io/github/UBESP-DCTV/costumer?branch=master)
 
 # costumer

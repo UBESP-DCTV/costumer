@@ -1,3 +1,13 @@
+# costumer 0.0.7
+
+* Removed AppVeyor (unexpected error with testthat which not happen
+  locally).
+* Removed OSX on Travis (unexpected error with testthat which not happen
+  locally).
+* Removed old version of R on Travis (unexpected error with testthat which
+  not happenlocally).
+
+
 # costumer 0.0.6
 
 * Added dependencies from `mlr` package needed for `unbalanced` ones
