@@ -23,8 +23,6 @@ A \code{\link[tm]{VCorpus}} data structure with metadata for
 Training data use the \pkg{tm} data structure.
 }
 \examples{
-library(hutch.code)
 create_train(liu_4h28)
-
 create_train(liu_4h28, 'Liu')
 }

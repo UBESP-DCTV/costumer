@@ -29,10 +29,7 @@ a data frame with six column (i.e. final, id, title, year, authors and
 abstract)
 }
 \examples{
-library(hutch.code)
 data2corpus(liu_4h28)
-
 data2corpus(liu_4h28, 'id')
-
 data2corpus(liu_4h28, 'id', 'Liu')
 }

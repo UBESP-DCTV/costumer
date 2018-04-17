@@ -1,7 +1,7 @@
 #' Stem words
 #'
 #' @param corpus a compatible object storing documents (actually, list (and
-#'               \code{\link{corpus_list}}) of (tokened) documents,
+#'               corpus-list of (tokened) documents,
 #'               character vectors and \code{\link[tm]{VCorpus}})
 #' @param language (chr) language to pass to package \pkg{Snowballc} to perform
 #'  the stemming, default is 'english'.

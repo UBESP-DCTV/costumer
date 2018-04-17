@@ -15,7 +15,7 @@
 #'    \item{\code{year}}{integer} Year of the record retrieved from pubmed.
 #'    \item{\code{authors}}{character} Authors of the record retrieved from
 #'      pubmed.
-#'    \item{\code{Abstract}}{character} Abstract of the record retrieved from
+#'    \item{\code{abstract}}{character} Abstract of the record retrieved from
 #'      pubmed.
 #' }
 #'

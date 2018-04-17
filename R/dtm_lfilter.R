@@ -20,7 +20,7 @@
 #'         \code{reference} and documents in \code{target} DTMs.
 #' @export
 #'
-#' @seealso \link{tm}, \link{slam}
+#' @seealso \pkg{tm}, \pkg{slam}
 #' @examples
 #' library(tm)
 #' data(acq)

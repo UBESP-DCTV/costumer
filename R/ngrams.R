@@ -4,7 +4,7 @@
 #' corpora.
 #'
 #' @param corpus a compatible object storing documents (actually, list (and
-#'               \code{\link{corpus_list}}) of (tokened) documents,
+#'               corpus-list of (tokened) documents,
 #'               character vectors and \code{\link[tm]{VCorpus}})
 #' @param n_min (num) minimum number of words to include in the grams
 #' @param n_max (num) maximum number of words to include into the grams
@@ -12,6 +12,9 @@
 #'                 using the \code{parallel} package functionality. Default is
 #'                 \code{FALSE}.
 #'
+#' @param ... further option passed to the function
+#' @param ncores (int) number of core to use in the parallel computation
+#'        (default is number of machine cores minus one)
 #'
 #' @return an object of the same class of input (except for
 #'         \code{character vector} input, for which the output is a \code{list})
@@ -68,6 +71,10 @@ ngram.VCorpus <- function(corpus, n_min = 1, n_max = 2, ..., parallel  = FALSE,
 }
 
 #' @rdname ngram
+#'
+#' @param docs_or_tokens character vector to explain if the vector is a
+#'        vector of documents (to be tokened) or is already a vector of
+#'        tokens (of a single document)
 #' @export
 ngram.character <- function(corpus, n_min = 1, n_max = 2, ...,
   parallel  = FALSE, ncores = parallel::detectCores() - 1,
@@ -105,7 +112,8 @@ ngram.default <- function(corpus, n_min = 1, n_max = 2, ...,
 
 #' Bigram computation
 #'
-#' a shortcuts for \code{ngram} using \code{n_min = n_max = 2}
+#' a shortcuts for \code{\link{ngram}} using
+#' \code{n_min = n_max = 2}
 #'
 #' @rdname ngram
 #' @return (list) of character vectors containing the nGrammed documents
@@ -123,7 +131,8 @@ bigram  <- function(corpus, ..., parallel = FALSE,
 
 #' Trigram computation
 #'
-#' a shortcuts for \code{ngram} using \code{n_min = n_max = 3}
+#' a shortcuts for \code{\link{ngram}} using
+#' \code{n_min = n_max = 3}
 #'
 #' @rdname ngram
 #' @return (list) of character vectors containing the nGrammed documents

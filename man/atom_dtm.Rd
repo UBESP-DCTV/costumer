@@ -36,6 +36,11 @@ This is to help to don't overflow the RAM.}
 computations using \code{\link[parallel]{makePSOCKcluster}}
 backend with max - 1 core.}
 
+\item{...}{further option passed to the function}
+
+\item{ncores}{(int) number of core to use in the parallel computation
+(default is number of machine cores minus one)}
+
 \item{docs_or_tokens}{(chr) if \code{docs} (default) means that the
 sequencies of elements of the character vector represent a document
 each one, if \code{tokens} means that they represents the sequencies

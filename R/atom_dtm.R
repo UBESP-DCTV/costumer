@@ -25,6 +25,11 @@
 #'                 computations using \code{\link[parallel]{makePSOCKcluster}}
 #'                 backend with max - 1 core.
 #'
+#' @param ... further option passed to the function
+#'
+#' @param ncores (int) number of core to use in the parallel computation
+#'        (default is number of machine cores minus one)
+#'
 #' @return a multiclass \code{\link[tm]{DocumentTermMatrix}} and
 #'         \code{\link[slam]{simple_triplet_matrix}} object weigthed with simple
 #'         term frequencies, rappresenting a document-term matrix in which each

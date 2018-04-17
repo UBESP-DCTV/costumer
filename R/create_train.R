@@ -14,9 +14,7 @@
 #' @export
 #'
 #' @examples
-#' library(hutch.code)
 #' create_train(liu_4h28)
-#'
 #' create_train(liu_4h28, 'Liu')
 
 create_train <- function(data_df, name_df = NULL) {
@@ -61,7 +59,7 @@ create_train <- function(data_df, name_df = NULL) {
     invisible(x)
   }
 
-  pb$tick(0, token = list(what = 'Corpus creation'))
+  pb$tick(0, tokens = list(what = 'Corpus creation'))
   corpus <- data2corpus(data_df, 'id', name_df) %>%  # this authomatically set id metadata
 
     tick(pb, 'assigning authors') %>%
@@ -73,10 +71,10 @@ create_train <- function(data_df, name_df = NULL) {
     tick(pb, 'assigning years') %>%
     v_assign_meta('year', data_df$year)
 
-  pb$tick(token = list(what = 'Assigning labels'))
+  pb$tick(tokens = list(what = 'Assigning labels'))
   corpus <- tm:::`meta<-.VCorpus`(corpus, 'real_label', value = data_df$final)
 
-  pb$tick(token = list(what = 'End'))
+  pb$tick(tokens = list(what = 'End'))
   corpus
 }
 

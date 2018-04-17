@@ -162,18 +162,22 @@ test_that("grams results are right", {
   expect_equal(ngram(liu_corpus)$content[[1]]$content[[1]], 'Oral anti-angiogenesis')
 })
 
-test_that("parallel ngram", {
-  expect_identical(
-    ngram(sample_list_corpus),
-    ngram(sample_list_corpus, parallel = TRUE)
-  )
-  expect_identical(
-    bigram(sample_list_corpus),
-    bigram(sample_list_corpus, parallel = TRUE)
-  )
-  expect_identical(
-    trigram(sample_list_corpus),
-    trigram(sample_list_corpus, parallel = TRUE)
-  )
-
-})
+# test_that("parallel ngram", {
+#   skip_on_cran()
+#   skip_on_travis()
+#   skip_on_appveyor()
+#
+#   expect_identical(
+#     ngram(sample_list_corpus),
+#     ngram(sample_list_corpus, parallel = TRUE)
+#   )
+#   expect_identical(
+#     bigram(sample_list_corpus),
+#     bigram(sample_list_corpus, parallel = TRUE)
+#   )
+#   expect_identical(
+#     trigram(sample_list_corpus),
+#     trigram(sample_list_corpus, parallel = TRUE)
+#   )
+#
+# })

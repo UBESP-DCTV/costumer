@@ -32,16 +32,25 @@ trigram(corpus, ..., parallel = FALSE, ncores = parallel::detectCores() - 1)
 }
 \arguments{
 \item{corpus}{a compatible object storing documents (actually, list (and
-\code{\link{corpus_list}}) of (tokened) documents,
+corpus-list of (tokened) documents,
 character vectors and \code{\link[tm]{VCorpus}})}
 
 \item{n_min}{(num) minimum number of words to include in the grams}
 
 \item{n_max}{(num) maximum number of words to include into the grams}
 
+\item{...}{further option passed to the function}
+
 \item{parallel}{(lgl) if \code{TRUE} perform the computation in parallel
 using the \code{parallel} package functionality. Default is
 \code{FALSE}.}
+
+\item{ncores}{(int) number of core to use in the parallel computation
+(default is number of machine cores minus one)}
+
+\item{docs_or_tokens}{character vector to explain if the vector is a
+vector of documents (to be tokened) or is already a vector of
+tokens (of a single document)}
 }
 \value{
 an object of the same class of input (except for
@@ -56,7 +65,9 @@ an object of the same class of input (except for
 The function aims is to create the ngram tokens for each document in a
 corpora.
 
-a shortcuts for \code{ngram} using \code{n_min = n_max = 2}
+a shortcuts for \code{\link{ngram}} using
+\code{n_min = n_max = 2}
 
-a shortcuts for \code{ngram} using \code{n_min = n_max = 3}
+a shortcuts for \code{\link{ngram}} using
+\code{n_min = n_max = 3}
 }

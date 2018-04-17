@@ -121,5 +121,10 @@ test_that("stm conversion attributes", {
 
 test_that("reverse", {
   expect_identical(dns2stm(stm2dns(liu_dtm)), liu_dtm)
-  expect_equal(as.simple_triplet_matrix.data.frame(as.data.frame.simple_triplet_matrix(liu_dtm)), liu_dtm)
+  expect_equal(
+    as.simple_triplet_matrix.data.frame(
+      as.data.frame.simple_triplet_matrix(liu_dtm)
+    ),
+    liu_dtm
+  )
 })

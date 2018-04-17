@@ -21,11 +21,8 @@
 #' @export
 #'
 #' @examples
-#' library(hutch.code)
 #' data2corpus(liu_4h28)
-#'
 #' data2corpus(liu_4h28, 'id')
-#'
 #' data2corpus(liu_4h28, 'id', 'Liu')
 data2corpus <- function(data_df, ids = NULL, suffix_name = NULL) {
   if (!inherits(data_df, 'data.frame')) stop('data_df has to be a data frame')

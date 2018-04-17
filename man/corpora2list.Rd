@@ -45,7 +45,7 @@ object.
 \examples{
 
 data(liu_4h28)
-corpora  <- data2corpora(liu_4h28)
+corpora  <- data2corpus(liu_4h28)
 doc_list <- corpora2list(corpora)
 
 corpora_back <- list2corpora(doc_list)
