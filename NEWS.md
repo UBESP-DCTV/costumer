@@ -1,13 +1,29 @@
 # costumer 0.0.5
 
-
+* Added `data-raw/raw_pubmed/` folder with the training data.
+* Added `data-raw/import_pubmed.R` to import pubmed trainig data.
+* Added `non_git_nor_build_derived_data/` folder for (big) derived data
+    which has to be stored but do not go under VCS nor into the package
+* Added `data-raw/raw_ctgov/` folder with the snapshot taken for test.
+* Added `inst/doc/AACT201603_comprehensive_data_dictionary.xlsx` as a data
+    dictionary for the original clinicaltrial.gov data.
+* Added `import_ctgov.R` and `ct_corpus_and_dtm.R` to import test data and
+    create the relative corpus and dtm.
+* Added `caret_methods_cvAble.R` script to generate `data/*.cvAble.rda`s
+    (with * in {glmnet, knn, LogitBoost, nb, rf, svmLinear2}) to update the
+    internal `caret` corresponding functions in a way they can reweight iDF
+    weights internally to the crossvalidation step.
+* Added `data_RUSROS_new.R` script to generate `data/*_new.rda`s
+    (with * in {ROS3565, ROS5050, RUS3565, RUS5050}) to add to the `caret`
+    plateau of resampling strategies the ones of our interest.
+* Updated data documentation.
 
 
 # costumer 0.0.4
 
-* Added imports
-* Added functions
-* Added tests (all passed)
+* Added imports.
+* Added functions.
+* Added tests (all passed).
 
 
 # costumer 0.0.3
