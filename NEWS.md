@@ -1,3 +1,9 @@
+# costumer 0.0.1
+
+* Added support for Travis-CI
+* Added support for AppVeyor
+* Added support for codecov
+
 # costumer 0.0.0.9000
 
 * Added `testthat` support for automated testing
