@@ -1,3 +1,10 @@
+# costumer 0.0.6
+
+* Added dependencies from `mlr` package needed for `unbalanced` ones
+* Added `inst/analyses/hutch_analyses_p1_v2.0.R` file which is the script 
+    used to perform the final analyses.
+
+
 # costumer 0.0.5
 
 * Added `data-raw/raw_pubmed/` folder with the training data.

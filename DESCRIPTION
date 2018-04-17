@@ -1,5 +1,5 @@
 Package: costumer
-Version: 0.0.5
+Version: 0.0.6
 Title: COmprehensive Searches ThroUgh Machine learning for systEmatic Reviews
 Description: The aims of this package is to provide the data, the functions,
   scripts for the analyses and the documentation (report) within the
@@ -38,7 +38,10 @@ Suggests:
     rmarkdown,
     devtools,
     covr,
-    plyr
+    plyr,
+    here,
+    plotROC,
+    tidyverse
 Imports: dplyr,
     tm,
     purrr,
@@ -59,4 +62,5 @@ Imports: dplyr,
     stats,
     utils,
     log4r,
-    e1071
+    e1071,
+    mlr
