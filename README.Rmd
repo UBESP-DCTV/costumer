@@ -131,6 +131,6 @@ devtools::install_github("UBESP-DCTV/costumer")
 ## Bug reports
 If you encounter a bug, please file a
 [reprex](https://github.com/tidyverse/reprex) (minimal reproducible example)
-to <https//github.com/UBESP-DCTV-imthcm/issues>
+to <https//github.com/UBESP-DCTV/imthcm/issues>
 
 ## Reference

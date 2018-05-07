@@ -54,7 +54,7 @@ folders' organization
 Bug reports
 -----------
 
-If you encounter a bug, please file a [reprex](https://github.com/tidyverse/reprex) (minimal reproducible example) to <https//github.com/UBESP-DCTV-imthcm/issues>
+If you encounter a bug, please file a [reprex](https://github.com/tidyverse/reprex) (minimal reproducible example) to <https//github.com/UBESP-DCTV/imthcm/issues>
 
 Reference
 ---------
