@@ -1,5 +1,6 @@
 # costumer 0.0.8
 
+* Updated references to the Title of the paper
 * Updated test for parallel computing on windows machines
 
 

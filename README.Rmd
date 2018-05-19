@@ -2,7 +2,7 @@
 output: github_document
 references:
 - id: lanera18
-  title: Building Comprehensive Searches including PubMed and ClinicalTrials.gov Through a Machine Learning Approach for Systematic Reviews
+  title: Extending PubMed Searches to ClinicalTrials.gov Through a Machine Learning Approach for Systematic Reviews
   author:
   - family: Lanera
     given: Corrado
