@@ -1,5 +1,8 @@
 # costumer 0.0.8
 
+* Skipped test for parallel computation (they work on our local and server
+  Windows machines but don't know how to test them in CI yet)
+* Spell check
 * Added AppVeyor support
 * Updated references to the Title of the paper
 * Updated test for parallel computing on windows machines
@@ -12,7 +15,7 @@
 * Removed OSX on Travis (unexpected error with testthat which not happen
   locally).
 * Removed old version of R on Travis (unexpected error with testthat which
-  not happenlocally).
+  not happen locally).
 
 
 # costumer 0.0.6
@@ -21,7 +24,7 @@
 * Added `inst/analyses/hutch_analyses_p1_v2.0.R` file which is the script 
     used to perform the final analyses.
 * Updated main `README` file.
-* Updated `DESCRIPTION`
+* Updated `DESCRIPTION`.
 
 
 # costumer 0.0.5
@@ -30,7 +33,7 @@
 * Added `data-raw/import_pubmed.R` to import pubmed trainig data.
 * Added `non_git_nor_build_derived_data/` folder for (big) derived data
     which has to be stored but do not go under VCS nor into the package
-* Added `data-raw/raw_ctgov/` folder with the snapshot taken for test.
+* Added `data-raw/raw_ctgov/` folder with the snapshot taken for the test.
 * Added `inst/doc/AACT201603_comprehensive_data_dictionary.xlsx` as a data
     dictionary for the original clinicaltrial.gov data.
 * Added `import_ctgov.R` and `ct_corpus_and_dtm.R` to import test data and
@@ -54,22 +57,22 @@
 
 # costumer 0.0.3
 
-* Updated `README.Rmd` removing install instructions from CRAN
+* Updated `README.Rmd` removing install instructions from CRAN.
 
 
 
 # costumer 0.0.2
 
 * Added `data-raw` folder for raw data.
-* Added support for osx on Travis-CI
+* Added support for OSX on Travis-CI
 
 
 
 # costumer 0.0.1
 
-* Added support for Travis-CI for integration within unix machine.
+* Added support for Travis-CI for integration within UNIX machine.
 * Added support for AppVeyor for integration within Windows machines.
-* Added support for codecov for testing coverage.
+* Added support for CodeCov for testing coverage.
 
 
 
@@ -80,5 +83,5 @@
 * Added a `.Rbuildignore` file to configure pkg build ignored files.
 * Set the License field in DESCRIPTION to 'GPL-3'.
 * Added a `LICENSE.md` file reporting the "GNU General Public License, v.3".
-* Added a `README.Rmd` file to produce the README in Rmarkdown.
+* Added a `README.Rmd` file to produce the README in R markdown.
 * Added a `NEWS.md` file to track changes to the package.

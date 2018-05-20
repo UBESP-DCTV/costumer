@@ -1,7 +1,7 @@
 Package: costumer
 Version: 0.0.8
 Title: COmprehensive Searches ThroUgh Machine learning for systEmatic Reviews
-Description: The aims of this package is to provide the data, the functions,
+Description: This package aims to provide the data, the functions,
   scripts for the analyses and the documentation (report) within the
   relative templates for the paper *Extending PubMed Searches to
   ClinicalTrials.gov Through a Machine Learning Approach for Systematic

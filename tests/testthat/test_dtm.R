@@ -48,6 +48,7 @@ test_that("class of dtm", {
 
 test_that("parallel works well", {
   skip('don\'t know how to test on CI for parallel computation')
+  skip_on_appveyor()
 
   expect_equal(
     atom_dtm(c('one', 'two', 'one two')),

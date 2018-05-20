@@ -3,7 +3,8 @@
 
 [![Travis build
 status](https://travis-ci.org/UBESP-DCTV/costumer.svg?branch=master)](https://travis-ci.org/UBESP-DCTV/costumer)
-<!-- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/UBESP-DCTV/costumer?branch=master&svg=true)](https://ci.appveyor.com/project/UBESP-DCTV/costumer) -->
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/UBESP-DCTV/costumer?branch=master&svg=true)](https://ci.appveyor.com/project/UBESP-DCTV/costumer)
 [![Coverage
 status](https://codecov.io/gh/UBESP-DCTV/costumer/branch/master/graph/badge.svg)](https://codecov.io/github/UBESP-DCTV/costumer?branch=master)
 
@@ -44,10 +45,9 @@ devtools::install_github("UBESP-DCTV/costumer")
   - `man/` contains the documents for each function or data provided
     (accessible in R by `?<name_of_the_object>`)
   - `data-raw/` contains all the script used to import and manage the
-    data used in the analyses and in the (automated) tests of the
-    package
-  - `data/` contains the data provided by the package. In particoular,
-    it contains:
+    data used in the analyses and the (automated) tests of the package
+  - `data/` contains the data provided by the package. In particular, it
+    contains:
       - the customized `caret` models (used to incorporate a correct
         management of cross-validation process with textual data,
         especially for iDF reweighting) — `*_cvAble.rda`;
@@ -60,8 +60,8 @@ devtools::install_github("UBESP-DCTV/costumer")
       - `AACT201603_comprehensive_data_dictionary.xlsx`, the
         data-dictionary for the original clinicaltrial.gov data.
 
-> **Note**: the main data used are to huge to be included in a R package
-> or in a github repository.
+> **Note**: the main data used are too huge to be included in an R
+> package or in a GitHub repository.
 > [Here](https://1drv.ms/f/s!AtlSkmthbrG4i8lA1fk5LPhmsOt0pg) you can
 > find a folder named `non_git_nor_build_derived_data/` (2.86 GB) which
 > contains:
@@ -73,9 +73,9 @@ devtools::install_github("UBESP-DCTV/costumer")
 >         parameter used in each model;
 >       - `models/` folder which contains all the trained models;
 >       - `hutch3.rda` data which contains the `hutch3` data frame
->         containing all the data-step of the analyses, i.e. starting
->         data, preprocessed data, dmt, testing, data, model used, plots
->         provided, … everything\!
+>         containing all the data-step of the analyses, i.e., starting
+>         data, preprocessed data, DMT, testing, data, the model used,
+>         plots provided, … everything\!
 >       - `*.txt` log files.
 >   - `raw_pubmed/` folder with the data used to train the models, which
 >     are needed to run the script `data-raw/import_pubmed.R`. Hence, if
@@ -99,7 +99,7 @@ devtools::install_github("UBESP-DCTV/costumer")
 >   - `test_*.rda` data which are the outputs of the function
 >     `data-raw/ct_corpus_and_dtm.R` which are also needed (and here are
 >     ready-to-use) to run the script of the analyses. Hence, if you
->     would like to run that script by yourself you need to put this
+>     would like to run that script by yourself, you need to put this
 >     files as they are into the `data/` folder.
 
 ## Bug reports

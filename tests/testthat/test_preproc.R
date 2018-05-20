@@ -176,6 +176,7 @@ test_that("grams results are right", {
 
 test_that("parallel ngram", {
   skip('don\'t know how to test on CI for parallel computation')
+  skip_on_appveyor()
 
   expect_identical(
     ngram(sample_list_corpus),
