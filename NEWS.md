@@ -1,3 +1,5 @@
+# costumer 1.0.0
+
 # costumer 0.0.8
 
 * Skipped test for parallel computation (they work on our local and server
