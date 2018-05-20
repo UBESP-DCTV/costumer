@@ -2,3 +2,9 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
+^\.travis\.yml$
+^codecov\.yml$
+^appveyor\.yml$
+^data-raw$
+^analyses$
+^non_git_nor_build_derived_data$
