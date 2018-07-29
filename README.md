@@ -14,7 +14,7 @@ The goal of costumer is to provide the data, the functions, scripts for
 the analyses and the documentation (report) within the relative
 templates for the paper *Building Comprehensive Searches including
 PubMed and ClinicalTrials.gov Through a Machine Learning Approach for
-Systematic Reviews*.
+Systematic Reviews*. Lanera et al. (2018)
 
 ## Installation
 
@@ -117,7 +117,8 @@ example) to \<https//github.com/UBESP-DCTV/imthcm/issues\>
 Lanera, Corrado, Clara Minto, Abhinav Sharma, Dario Gregori, Paola
 Berchialla, and Ileana Baldi. 2018. “Extending PubMed Searches to
 ClinicalTrials.gov Through a Machine Learning Approach for Systematic
-Reviews.” *Submitted*. Under revision.
+Reviews.” *Jurnal of Clinical Epidemiology*, no. 103:22–30.
+<https://doi.org/10.1016/j.jclinepi.2018.06.015>.
 
 </div>
 
