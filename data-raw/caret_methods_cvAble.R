@@ -3,7 +3,6 @@
 # ==========================================================================
 
 svmLinear2_cvAble <- caret:::getModelInfo()$svmLinear2
-
 # label --------------------------------------------------------------------
 #
 svmLinear2_cvAble$label <- stringr::str_c(
@@ -13,30 +12,27 @@ svmLinear2_cvAble$label <- stringr::str_c(
 
 # libraries ----------------------------------------------------------------
 #
-svmLinear2_cvAble$library <- c(caret:::getModelInfo()$svmLinear2$library,
-                               'hutch.code'
-)
+svmLinear2_cvAble$library <- caret:::getModelInfo()$svmLinear2$library
 
 # fit ----------------------------------------------------------------------
 #
 svmLinear2_cvAble$fit <- function(
   x, y, wts, param, lev, last, classProbs, ...) {
 
-  requireNamespace('hutch.code')
 #  message(paste('fit original x', str(x)))
   if (is.data.frame(x)) {
-    x <- hutch.code:::as.simple_triplet_matrix.data.frame(x, force = TRUE)
+    x <- as.simple_triplet_matrix.data.frame(x, force = TRUE)
   }
 
-  xx <- hutch.code::tfidf4dtm(dtm = x, force = TRUE)
+  xx <- tfidf4dtm(dtm = x, force = TRUE)
 # message(paste('fit used x', str(xx)))
 
   if (any(names(list(...)) == "probability") | is.numeric(y)) {
-    out <- svm(x = hutch.code:::stm2dns(xx, memory.limit()), y = y, kernel = "linear",
+    out <- svm(x = stm2dns(xx, memory.limit()), y = y, kernel = "linear",
                cost = param$cost, scale = FALSE, ...)
   }
   else {
-    out <- svm(x = hutch.code:::stm2dns(xx, memory.limit()), y = y, kernel = "linear",
+    out <- svm(x = stm2dns(xx, memory.limit()), y = y, kernel = "linear",
                cost = param$cost, probability = classProbs, scale = FALSE, ...)
   }
 # message(paste('fit out ', str(out)))
@@ -54,24 +50,23 @@ svmLinear2_cvAble$predict <- function(
 #  message(paste('predict input ', str(newdata)))
 #  message(paste('predict model ', str(modelFit)))
 
-  requireNamespace('hutch.code')
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 #  message(paste('predict to be weighted ', str(newdata)))
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
   )
 #  message(paste('predict used ', str(xx)))
 
-  out <- e1071:::predict.svm(modelFit, hutch.code:::stm2dns(xx, memory.limit()))
+  out <- e1071:::predict.svm(modelFit, stm2dns(xx, memory.limit()))
 #  message(paste('predict output ', str(out)))
 
   out
@@ -84,22 +79,21 @@ svmLinear2_cvAble$prob <- function(
   modelFit, newdata, submodels = NULL, ...
 ) {
 
-  requireNamespace('hutch.code')
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
   )
 
-  out <- e1071:::predict.svm(modelFit, hutch.code:::stm2dns(xx, memory.limit()), probability = TRUE)
+  out <- e1071:::predict.svm(modelFit, stm2dns(xx, memory.limit()), probability = TRUE)
   attr(out, "probabilities")
   out
 }
@@ -142,7 +136,7 @@ svmLinear2_cvAble$sort <- function (x)
 
 # saving -------------------------------------------------------------------
 #
-devtools::use_data(svmLinear2_cvAble, overwrite = TRUE)
+# # devtools::use_data(svmLinear2_cvAble, overwrite = TRUE)
 
 
 # ==========================================================================
@@ -160,20 +154,18 @@ nb_cvAble$label <- stringr::str_c(
 
 # libraries ----------------------------------------------------------------
 #
-nb_cvAble$library <- c(caret:::getModelInfo()$nb$library, 'hutch.code')
+nb_cvAble$library <- caret:::getModelInfo()$nb$library
 
 # fit ----------------------------------------------------------------------
 #
 nb_cvAble$fit <- function(
   x, y, wts, param, lev, last, classProbs, ...) {
 
-  requireNamespace('hutch.code')
-
   if (is.data.frame(x)) {
-    x <- hutch.code:::as.simple_triplet_matrix.data.frame(x, force = TRUE)
+    x <- as.simple_triplet_matrix.data.frame(x, force = TRUE)
   }
 
-  xx <- hutch.code::tfidf4dtm(dtm = x, force = TRUE)
+  xx <- tfidf4dtm(dtm = x, force = TRUE)
 
   if (param$usekernel) {
     out <- NaiveBayes(stm2dns(xx, memory.limit()), y, usekernel = TRUE, fL = param$fL,
@@ -193,22 +185,22 @@ nb_cvAble$predict <- function(
   modelFit, newdata, submodels = NULL, ...
 ) {
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
   )
 
-  xx <- hutch.code:::as.data.frame.simple_triplet_matrix(xx)
+  xx <- as.data.frame.simple_triplet_matrix(xx)
   predict(modelFit, xx)$class
 
 }
@@ -219,28 +211,28 @@ nb_cvAble$predict <- function(
 nb_cvAble$prob <- function(
   modelFit, newdata, submodels = NULL, ...
 ) {
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
   )
 
-  xx <- hutch.code:::as.data.frame.simple_triplet_matrix(xx)
+  xx <- as.data.frame.simple_triplet_matrix(xx)
   predict(modelFit, xx, type = "raw")$posterior
 }
 
 # saving -------------------------------------------------------------------
 #
-devtools::use_data(nb_cvAble, overwrite = TRUE)
+# devtools::use_data(nb_cvAble, overwrite = TRUE)
 
 
 
@@ -260,20 +252,20 @@ knn_cvAble$label <- stringr::str_c(
 
 # libraries ----------------------------------------------------------------
 #
-knn_cvAble$library <- c(caret:::getModelInfo()$knn$library, 'hutch.code')
+knn_cvAble$library <- c(caret:::getModelInfo()$knn$library)
 
 # fit ----------------------------------------------------------------------
 #
 knn_cvAble$fit <- function(
   x, y, wts, param, lev, last, classProbs, ...) {
 
-  requireNamespace('hutch.code')
+
 
   if (is.data.frame(x)) {
-    x <- hutch.code:::as.simple_triplet_matrix.data.frame(x, force = TRUE)
+    x <- as.simple_triplet_matrix.data.frame(x, force = TRUE)
   }
 
-  xx <- hutch.code::tfidf4dtm(dtm = x, force = TRUE)
+  xx <- tfidf4dtm(dtm = x, force = TRUE)
 
   if (is.factor(y)) {
     out <- knn3(stm2dns(xx, memory.limit()), y, k = param$k, ...)
@@ -293,16 +285,16 @@ knn_cvAble$predict <- function(
   modelFit, newdata, submodels = NULL, ...
 ) {
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -321,16 +313,16 @@ knn_cvAble$predict <- function(
 knn_cvAble$prob <- function(
   modelFit, newdata, submodels = NULL, ...
 ) {
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -341,7 +333,7 @@ knn_cvAble$prob <- function(
 
 # saving -------------------------------------------------------------------
 #
-devtools::use_data(knn_cvAble, overwrite = TRUE)
+# devtools::use_data(knn_cvAble, overwrite = TRUE)
 
 
 
@@ -360,20 +352,20 @@ rf_cvAble$label <- stringr::str_c(
 
 # libraries ----------------------------------------------------------------
 #
-rf_cvAble$library <- c(caret:::getModelInfo()$rf$library, 'hutch.code')
+rf_cvAble$library <- c(caret:::getModelInfo()$rf$library)
 
 # fit ----------------------------------------------------------------------
 #
 rf_cvAble$fit <- function(
   x, y, wts, param, lev, last, classProbs, ...) {
 
-  requireNamespace('hutch.code')
+
 
   if (is.data.frame(x)) {
-    x <- hutch.code:::as.simple_triplet_matrix.data.frame(x, force = TRUE)
+    x <- as.simple_triplet_matrix.data.frame(x, force = TRUE)
   }
 
-  xx <- hutch.code::tfidf4dtm(dtm = x, force = TRUE)
+  xx <- tfidf4dtm(dtm = x, force = TRUE)
 
   out <- randomForest::randomForest(
            stm2dns(xx, memory.limit()), y, mtry = param$mtry, ...
@@ -391,16 +383,16 @@ rf_cvAble$predict <- function(
 ) {
   if (is.null(newdata)) return(predict(modelFit))
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -417,16 +409,16 @@ rf_cvAble$prob <- function(
 ) {
   if (is.null(newdata)) return(predict(modelFit))
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -441,7 +433,7 @@ rf_cvAble$prob <- function(
 
 # saving -------------------------------------------------------------------
 #
-devtools::use_data(rf_cvAble, overwrite = TRUE)
+# devtools::use_data(rf_cvAble, overwrite = TRUE)
 
 
 
@@ -460,22 +452,20 @@ LogitBoost_cvAble$label <- stringr::str_c(
 
 # libraries ----------------------------------------------------------------
 #
-LogitBoost_cvAble$library <- c(caret:::getModelInfo()$LogitBoost$library,
-  'hutch.code'
-)
+LogitBoost_cvAble$library <- caret:::getModelInfo()$LogitBoost$library
 
 # fit ----------------------------------------------------------------------
 #
 LogitBoost_cvAble$fit <- function(
   x, y, wts, param, lev, last, classProbs, ...) {
 
-  requireNamespace('hutch.code')
+
 
   if (is.data.frame(x)) {
-    x <- hutch.code:::as.simple_triplet_matrix.data.frame(x, force = TRUE)
+    x <- as.simple_triplet_matrix.data.frame(x, force = TRUE)
   }
 
-  xx <- hutch.code::tfidf4dtm(dtm = x, force = TRUE)
+  xx <- tfidf4dtm(dtm = x, force = TRUE)
 
   caTools::LogitBoost(stm2dns(xx, memory.limit()), y, nIter = param$nIter)
 
@@ -491,16 +481,16 @@ LogitBoost_cvAble$predict <- function(
 ) {
   if (is.null(newdata)) return(predict(modelFit))
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -532,16 +522,16 @@ LogitBoost_cvAble$prob <- function(
 ) {
   if (is.null(newdata)) return(predict(modelFit))
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -570,7 +560,7 @@ LogitBoost_cvAble$prob <- function(
 
 # saving -------------------------------------------------------------------
 #
-devtools::use_data(LogitBoost_cvAble, overwrite = TRUE)
+# devtools::use_data(LogitBoost_cvAble, overwrite = TRUE)
 
 
 
@@ -590,22 +580,20 @@ glmnet_cvAble$label <- stringr::str_c(
 
 # libraries ----------------------------------------------------------------
 #
-glmnet_cvAble$library <- c(caret:::getModelInfo()$glmnet$library,
-  'hutch.code'
-)
+glmnet_cvAble$library <- caret:::getModelInfo()$glmnet$library
 
 # fit ----------------------------------------------------------------------
 #
 glmnet_cvAble$fit <- function(
   x, y, wts, param, lev, last, classProbs, ...) {
 
-  requireNamespace('hutch.code')
+
 
   if (is.data.frame(x)) {
-    x <- hutch.code:::as.simple_triplet_matrix.data.frame(x, force = TRUE)
+    x <- as.simple_triplet_matrix.data.frame(x, force = TRUE)
   }
 
-  xx <- hutch.code::tfidf4dtm(dtm = x, force = TRUE)
+  xx <- tfidf4dtm(dtm = x, force = TRUE)
   xxx <- stm2dns(xx, memory.limit())
 
   numLev <- if (is.character(y) | is.factor(y))
@@ -640,16 +628,16 @@ glmnet_cvAble$predict <- function(
 ) {
   if (is.null(newdata)) return(predict(modelFit))
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -689,16 +677,16 @@ glmnet_cvAble$prob <- function(
 ) {
   if (is.null(newdata)) return(predict(modelFit))
 
-  requireNamespace('hutch.code')
+
   requireNamespace('slam')
   if (inherits(newdata, 'data.frame')) {
-    newdata <- hutch.code:::as.simple_triplet_matrix.data.frame(
+    newdata <- as.simple_triplet_matrix.data.frame(
       newdata,
       force = TRUE
     )
   }
 
-  xx <- hutch.code::reweights_test(
+  xx <- reweights_test(
     target   = newdata,
     original = attr(modelFit, 'original_train'),
     force   = TRUE
@@ -737,7 +725,7 @@ glmnet_cvAble$prob <- function(
 
 # saving -------------------------------------------------------------------
 #
-devtools::use_data(glmnet_cvAble, overwrite = TRUE)
+# usethis::use_data(glmnet_cvAble, overwrite = TRUE)
 
 
 

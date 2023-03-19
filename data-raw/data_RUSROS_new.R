@@ -3,11 +3,10 @@ ROS3565_new <- list(
 
   func = function(x, y) {
     if (!requireNamespace('unbalanced')) stop('package unbalanced needed.')
-    requireNamespace('costumer')
 
 # message(paste('ROS_new original x', str(x)))
 # message(paste('ROS_new original y', str(y)))
-    dat    <- if (is.data.frame(x)) x else costumer:::as.data.frame.simple_triplet_matrix(x)
+    dat    <- if (is.data.frame(x)) x else as.data.frame.simple_triplet_matrix(x)
     tab <- table(y)
 # message(paste('ROS_new used dat', str(dat)))
 
@@ -28,7 +27,7 @@ ROS3565_new <- list(
   first = TRUE
 )
 
-devtools::use_data(ROS3565_new, overwrite = TRUE)
+# usethis::use_data(ROS3565_new, overwrite = TRUE)
 
 
 
@@ -37,9 +36,8 @@ RUS3565_new <- list(
 
   func = function(x, y) {
     if (!requireNamespace('unbalanced')) stop('package unbalanced needed.')
-    requireNamespace('costumer')
 
-    dat    <- if (is.data.frame(x)) x else costumer:::as.data.frame.simple_triplet_matrix(x)
+    dat    <- if (is.data.frame(x)) x else as.data.frame.simple_triplet_matrix(x)
     tab <- table(y)
 
     if (length(attr(tab, 'dimnames')) > 1 || length(tab) != 2) stop('Y has to be 2 levels')
@@ -62,7 +60,7 @@ RUS3565_new <- list(
   first = TRUE
 )
 
-devtools::use_data(RUS3565_new, overwrite = TRUE)
+# usethis::use_data(RUS3565_new, overwrite = TRUE)
 
 
 
@@ -72,11 +70,10 @@ ROS5050_new <- list(
 
   func = function(x, y) {
     if (!requireNamespace('unbalanced')) stop('package unbalanced needed.')
-    requireNamespace('costumer')
 
     # message(paste('ROS_new original x', str(x)))
     # message(paste('ROS_new original y', str(y)))
-    dat    <- if (is.data.frame(x)) x else costumer:::as.data.frame.simple_triplet_matrix(x)
+    dat    <- if (is.data.frame(x)) x else as.data.frame.simple_triplet_matrix(x)
     tab <- table(y)
     # message(paste('ROS_new used dat', str(dat)))
 
@@ -95,7 +92,7 @@ ROS5050_new <- list(
   first = TRUE
 )
 
-devtools::use_data(ROS5050_new, overwrite = TRUE)
+# usethis::use_data(ROS5050_new, overwrite = TRUE)
 
 
 
@@ -104,9 +101,8 @@ RUS5050_new <- list(
 
   func = function(x, y) {
     if (!requireNamespace('unbalanced')) stop('package unbalanced needed.')
-    requireNamespace('costumer')
 
-    dat    <- if (is.data.frame(x)) x else costumer:::as.data.frame.simple_triplet_matrix(x)
+    dat    <- if (is.data.frame(x)) x else as.data.frame.simple_triplet_matrix(x)
     tab <- table(y)
 
     if (length(attr(tab, 'dimnames')) > 1 || length(tab) != 2) stop('Y has to be 2 levels')
@@ -129,5 +125,5 @@ RUS5050_new <- list(
   first = TRUE
 )
 
-devtools::use_data(RUS5050_new, overwrite = TRUE)
+# usethis::use_data(RUS5050_new, overwrite = TRUE)
 

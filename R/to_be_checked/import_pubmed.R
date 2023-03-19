@@ -210,7 +210,7 @@ collapse_field <- function(field) purrr::map(field, `[[`, 1)
 import_pubmed <- function(ris) {
 
     read_ris(ris) %>%
-        purrr::map(mlnursect:::collapse_field) %>%
+        purrr::map(collapse_field) %>%
         purrr::map(~plyr::rbind.fill(dplyr::as_data_frame(.))) %>%
         plyr::rbind.fill() %>%
         dplyr::as_data_frame() %>%

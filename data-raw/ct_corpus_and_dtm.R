@@ -30,7 +30,7 @@ tick <- function(x, pb, token = '', ...) {
 # logger -------------------------------------------------------------------
 #
 pathlog    <- file.path(getwd(), 'log')
-hutch.code:::loggeRs(prj_name = 'hutch', pathlog = pathlog)
+costumer:::loggeRs(prj_name = 'hutch', pathlog = pathlog)
 
 
 # Main code ================================================================
